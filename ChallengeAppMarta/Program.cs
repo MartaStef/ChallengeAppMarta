@@ -5,7 +5,7 @@ if (name == "Ewa" && age < 50)
 {
     Console.WriteLine("Ewa, lat 33");
 }
-else if (!women == true && age != 50)
+else if (!women && age != 50)
 {
     Console.WriteLine("Mezczyzna Twojego Zycia");
 }
