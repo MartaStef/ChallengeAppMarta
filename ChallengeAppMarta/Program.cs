@@ -36,7 +36,10 @@ Employee bestEmployee = null;
 foreach (var employee in employees) 
 {
     if (employee.Result> maxResult)
-    { bestEmployee = employee; }
+    { 
+        maxResult= employee.Result;
+        bestEmployee = employee; 
+    }
 }
 
 Console.WriteLine(
