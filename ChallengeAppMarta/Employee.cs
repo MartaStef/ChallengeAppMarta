@@ -1,4 +1,6 @@
 ﻿
+using System;
+
 namespace ChallengeAppMarta
 {
     public class Employee
@@ -51,8 +53,8 @@ namespace ChallengeAppMarta
            float result = (float)Math.Round(grade, 2);
             this.AddGrade(result);
         }
-
-        public Statistics GetStatistics() 
+        
+        public Statistics GetStatisticsWithForeach() 
         {
             var statistics = new Statistics();
             statistics.Average = 0;
@@ -64,6 +66,61 @@ namespace ChallengeAppMarta
                 statistics.Max = Math.Max(statistics.Max, grade);
                 statistics.Min = Math.Min(statistics.Min, grade);
                 statistics.Average += grade;
+            }
+            statistics.Average /= this.grades.Count;
+            return statistics;
+        }
+        
+        public Statistics GetStatisticsWithFor()
+        {
+            var statistics = new Statistics();
+            statistics.Average = 0;
+            statistics.Max = float.MinValue;
+            statistics.Min = float.MaxValue;
+
+            for (var i = 0; i < this.grades.Count; i++)
+            {
+                statistics.Max = Math.Max(statistics.Max, this.grades[i]);
+                statistics.Min = Math.Min(statistics.Min, this.grades[i]);
+                statistics.Average += this.grades[i];
+            }
+            statistics.Average /= this.grades.Count;
+            return statistics;
+        }
+
+        public Statistics GetStatisticsWithDoWhile()
+        { 
+            var statistics = new Statistics();
+            statistics.Average = 0;
+            statistics.Max = float.MinValue;
+            statistics.Min = float.MaxValue;
+
+            var index = 0;
+            do
+            {
+                statistics.Max = Math.Max(statistics.Max, this.grades[index]);
+                statistics.Min = Math.Min(statistics.Min, this.grades[index]);
+                statistics.Average += this.grades[index];
+                index++;
+            } while (index < this.grades.Count);
+            statistics.Average /= this.grades.Count;
+            return statistics;
+        }
+
+        public Statistics GetStatisticsWithWhile()
+        {
+            var statistics = new Statistics();
+            statistics.Average = 0;
+            statistics.Max = float.MinValue;
+            statistics.Min = float.MaxValue;
+
+            var index = 0;
+            while (index < this.grades.Count)
+            {
+                statistics.Max = Math.Max(statistics.Max, this.grades[index]);
+                statistics.Min = Math.Min(statistics.Min, this.grades[index]);
+                statistics.Average += this.grades[index];
+                index++;
             }
             statistics.Average /= this.grades.Count;
             return statistics;
