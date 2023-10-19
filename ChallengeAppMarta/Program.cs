@@ -1,7 +1,7 @@
 ﻿using ChallengeAppMarta;
 
 Console.WriteLine("Witamy w Programie do oceny pracowników");
-Console.WriteLine("============================================");
+Console.WriteLine("=======================================");
 Console.WriteLine("Należy podać kolejno oceny pracownika od 0 do 100");
 Console.WriteLine("lub litery od a do e");
 Console.WriteLine("Aby wyświetlić statystyki należy wpisać literę q");
