@@ -6,15 +6,27 @@ namespace ChallengeAppMarta
     public class Employee: Person
     {
         private List<float> grades = new List<float>();
-        public Employee(string name, string surname, int age)
-            :base (name,surname,sex)
+        public Employee(string name, string surname, int age, char sex)
+            : base (name,surname,sex)
         {
-            this.Name = name;
-            this.Surname = surname;
             this.Age = age;
         }
         public int Age { get; private set; }
-               
+       
+        public Employee()
+            : this (null, null, 0, '0')
+        { 
+        }
+
+        public Employee(string name,char sex)
+            : this (name, null, 0, sex)
+        {
+        }
+
+        public Employee(string name,string surname)
+            : this (name,surname,0, '0')
+        {
+        }
         public void AddGrade(float grade)
         {
             if(grade >= 0 && grade <= 100)
