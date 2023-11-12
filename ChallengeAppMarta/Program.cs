@@ -8,7 +8,7 @@ Console.WriteLine("Aby wyświetlić statystyki należy wpisać literę q");
 Console.WriteLine();
 
 var employee = new Employee("Marta", "Stefanska", 53);
-var supervisor = new Supervisor("Zouza","WrednyHerszt",'K');
+var supervisor = new Supervisor("Marta","Stefanska",'K', 53);
 
 bool exit = true;
 
