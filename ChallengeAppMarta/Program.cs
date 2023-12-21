@@ -7,9 +7,12 @@ Console.WriteLine("Aby wyświetlić statystyki należy wpisać literę q");
 Console.WriteLine();
 
 var employee = new EmployeeInFile("Marta", "Stefanska");
+employee.GradeAdded += EmployeeGradeAdded;
 
-
-
+void EmployeeGradeAdded(object sender, EventArgs args)
+{
+    Console.WriteLine("Dodano nową ocenę");
+}
 
 
         while (true)
